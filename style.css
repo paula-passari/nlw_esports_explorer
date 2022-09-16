@@ -1,0 +1,14 @@
+/* Ajuste do background
+Usa-se a função url() para importar a imagem */
+body {
+    background-image: url(./assets/fundo.jpg);
+    background-position: top center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-color: #121214;
+}
+
+/* Cria uma borda temporária para trabalhar com o estilo */
+main * {
+    border: 1px solid red;
+}
