@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    line-height: 160%;
 }
 
 /* Ajuste do background
@@ -23,16 +25,9 @@ main * {
 main {
     max-width: 580px;
     width: 90%;
-    margin: auto;
+    margin: 32px auto;
     display: grid;
     gap: 24px;
-    margin-top: 32px;
-}
-
-/* Fontes */
-body * {
-    font-family: 'Inter', sans-serif;
-    line-height: 160%;
 }
 
 section {
@@ -58,7 +53,7 @@ section p {
     color: #A1A1AA;
 }
 
-/* Lista */
+/* Listas */
 section ul {
     list-style: none;
     display: flex;
@@ -68,11 +63,109 @@ section ul {
 }
 
 .games-list img {
-    width: 100px;
+    width: 90px;
+    border-radius: 8px;
+}
+
+.lista-retro img {
+    width: 90px;
     border-radius: 8px;
 }
 
 .channel-list img {
     width: 70px;
     border-radius: 50%;
+    border: 1.5px solid #443E54;
+}
+
+/* header */
+header {
+    padding-top:32px;
+    height: calc(120px + 32px);
+}
+
+header div {
+    width: 120px;
+    margin: auto;
+    display: flex;
+    padding: 4px;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    border-radius: 50%;
+}
+
+header div img {
+    width: 100%;
+    border-radius: 80%;
+}
+
+/* Transição (ao passar o mouse, aumenta um pouco o tamanho da imagem*/
+header div {
+    transition: transform .3s;
+}
+
+header div:hover {
+    transform: scale(1.1);
+}
+
+section ul li{
+    transition: transform .3s;
+}
+
+section ul li:hover {
+    transform: scale(1.1);
+}
+
+/* animação */
+
+/* aplicação das animações */
+header div {
+    animation: animationTop .7s .1s backwards;
+}
+
+main section {
+    animation: animationBottom .7s backwards;
+    
+}
+
+/* Animando card por card */
+main section:nth-child(1) {
+    animation-delay: .1s;
+}
+
+main section:nth-child(2) {
+    animation-delay: .3s;
+
+}
+
+main section:nth-child(3) {
+    animation-delay: .5s;
+}
+
+main section:nth-child(4) {
+    animation-delay: .7s;
+}
+
+/* Aqui é definido como serão as animações */
+@keyframes animationTop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes animationBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
